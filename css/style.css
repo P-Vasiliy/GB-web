@@ -43,8 +43,31 @@ body {
     align-items: center;
 }
 
+.header__search-icon,
+.header__burger,
+.header__link {
+    fill: #E8E8E8;
+}
+
+.header__logo:hover,
+.header__search-icon:hover,
+.header__burger:hover,
+.header__link-img:hover {
+    transform: scale(1.3);
+}
+
+.header__burger:active +.header__nav,
+.header__burger:focus +.header__nav {
+  display: block;
+}
+
+.header__nav:active {
+    display: block;
+  }
+
 .header__wrp {
     justify-content: space-between;
+    position: relative;
 }
 
 .header__burger {
@@ -57,11 +80,65 @@ body {
 }
 
 .header__link {
+    position: relative;
     margin-left: 33px;
 }
 
+/* .header__basket-ellipse {
+    position: absolute;
+    left: 70%;
+    right: 15%;
+    bottom: 100%;
+}
+
+.header__basket-ellipse-text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #FFFFFF;
+    position: absolute;
+    left: 89%;
+    bottom: 112%;
+} */
+
 .header__nav {
+    width: 232px;
+    height: 764px;
+    background: #FFFFFF;
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+    position: absolute;
+    left: 1140px;
+    top: 58px;
+    padding: 37px 0 0 34px;
+    box-sizing: border-box;
     display: none;
+}
+
+.header__nav-title {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    margin-bottom: 4px;
+}
+
+.nav-list__title {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #F16D7F;
+    margin: 20px 0 12px 0;
+}
+
+.nav-list__item {
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #6F6E6E;
+    margin: 0 0 11px 22px;
 }
 
 .main {
@@ -109,14 +186,9 @@ body {
 
 .sales__list {
     text-transform: uppercase;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    /* display: grid;
-grid-template-columns: repeat(3, 1fr);
-grid-template-rows: 1.4fr 0.9fr;
-grid-gap: 30px; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
     margin: 64px auto 97px auto;
 }
 
@@ -145,13 +217,14 @@ grid-gap: 30px; */
 
 .sales__item-shoes {
     background: url(../img/sale/accesories.jpg) no-repeat;
+    background-size: cover;
     width: 1140px;
     height: 180px;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    margin-top: 30px;
+    grid-area: 2 / 1 / 3 / 4;
 }
 
 .sales__offer {
@@ -192,6 +265,49 @@ grid-gap: 30px; */
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 30px;
     margin: 48px auto;
+}
+
+.product__item {
+    position: relative;
+}
+
+.product__item-link {
+    border: 1px solid #FFFFFF;
+    width: 138px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    position: absolute;
+    left: 111px;
+    right: 111px;
+    top: 188px;
+    bottom: 188px;
+}
+
+.product__item-dark {
+    position: absolute;
+    top: 0;
+    width: 360px;
+    height: 420px;
+    opacity: 0;
+}
+
+.product__item-dark:hover {
+    background: rgba(58, 56, 56, 0.86);
+    opacity: 1;
+}
+
+.product__item-link-img {
+    fill: #FFFFFF;
+    margin: auto 11px auto 13px;
+}
+
+.product__item-link-text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    color: #FFFFFF;
 }
 
 .product__item-title {
@@ -235,6 +351,11 @@ grid-gap: 30px; */
     line-height: 19px;
     color: #F26376;
     text-transform: capitalize;
+}
+
+.product__all-link:hover {
+    background: #F16D7F;
+    color: #FFFFFF;
 }
 
 .advantages {
@@ -415,4 +536,151 @@ grid-gap: 30px; */
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.footer__bg-social:hover {
+    background-color: #F16D7F;
+    fill: white;
+}
+
+.main__head {
+    background-color: var(--pink-bg);
+    min-width: 1600px;
+    padding: 60px 0 60px 0;
+}
+
+.main__registration-head {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    text-transform: uppercase;
+    color: #F16D7F;
+}
+
+.main__registration-content {
+    display: flex;
+    padding-top: 64px;
+}
+
+.main__registration-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.registration-gender {
+    /* width: 358px; */
+    margin: 32px 0 33px 0;
+}
+
+.registration-gender-item {
+    font-weight: 300;
+    font-size: 11px;
+    line-height: 13px;
+    text-transform: capitalize;
+    color: #000000;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.registration-input-radio {
+    width: 17px;
+    height: 17px;
+    margin-right: 10px;
+    border: 1px solid #A4A4A4;
+    box-sizing: border-box;
+}
+
+.registration-title {
+    width: 358px;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    color: #222222;
+}
+
+.registration-input {
+    width: 358px;
+    height: 44px;
+    border: 1px solid #A4A4A4;
+    margin-top: 21px;
+    padding-left: 17px;
+    box-sizing: border-box;
+}
+
+.registration-input::placeholder {
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    text-transform: capitalize;
+    color: #B1B1B1;
+}
+
+.registration-password-requirements {
+    width: 359px;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    color: #B1B1B1;
+    margin: 15px 0 39px 0;
+}
+
+.registration-button {
+    height: 50px;
+    width: 167px;
+    border: none;
+    background: #F16D7F;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    margin: 0 auto 96px 0;
+}
+
+.registration-button-arrow {
+    margin-left: 20px;
+}
+
+.main__registration-advantages-title {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+}
+
+.main__registration-advantages {
+    margin-left: 128px;
+}
+
+.main__registration-advantages-text {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    margin: 22px 0;
+    color: #000000;
+}
+
+.main__registration-advantages-item {
+    list-style-image: url(../img/svg-illustrations/check-mark.svg);
+    list-style-position: inside;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+    margin-bottom: 16px;
+}
+
+.main__registration-advantages-item:before {
+    content: '';
+    margin-left: 22px;
+}
+
+.full {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.top {
+    flex-grow: 1;
 }
